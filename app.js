@@ -14,7 +14,7 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
   console.log(restaurantList.results)
-  res.render('index')
+  res.render('index', { restaurants: restaurantList.results })
 })
 
 app.listen(port, () => {
