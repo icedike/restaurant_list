@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const exhbps = require('express-handlebars')
+const restaurantList = require('./restaurant.json')
 
 const port = 3000
 
@@ -12,6 +13,7 @@ app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
+  console.log(restaurantList.results)
   res.render('index')
 })
 
