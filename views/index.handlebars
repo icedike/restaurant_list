@@ -22,6 +22,7 @@
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="card-columns">
+        {{#if restaurants}}
         {{#each restaurants}}
         <a href="/restaurants/{{this.id}}" class="text-secondary">
           <div class="card mb-3">
@@ -42,6 +43,9 @@
           </div>
         </a>
         {{/each}}
+        {{else}}
+        <h2>找不到符合的餐廳 </h2>
+        {{/if}}
       </div>
     </div>
   </div>
