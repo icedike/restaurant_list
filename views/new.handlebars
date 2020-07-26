@@ -1,74 +1,66 @@
-<h1 class="mb-1 restaurant-show-title">修改餐廳資料</h1>
+<h1 class="mb-1 restaurant-show-title">新增餐廳資料</h1>
 <div class="container mt-5 ">
-  <form action="/restaurants/{{ restaurant._id }}/edit" method="POST">
+  <form action="/restaurants/" method="POST">
     <div class="form-group row">
       <label for="name" class="col-sm-2 col-form-label">name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="name" placeholder="name" name="name" value="{{ restaurant.name }}">
+        <input type="text" class="form-control" id="name" placeholder="name" name="name">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="name_en" class="col-sm-2 col-form-label">name_en</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="name_en" placeholder="name_en" name="name_en"
-          value="{{ restaurant.name_en }}">
+        <input type="text" class="form-control" id="name_en" placeholder="name_en" name="name_en">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="category" class="col-sm-2 col-form-label">category</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="category" placeholder="category" name="category"
-          value="{{ restaurant.category }}">
+        <input type="text" class="form-control" id="category" placeholder="category" name="category">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="image" class="col-sm-2 col-form-label">image</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="image" placeholder="image" name="image"
-          value="{{ restaurant.image }}">
+        <input type="text" class="form-control" id="image" placeholder="image" name="image">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="location" class="col-sm-2 col-form-label">location</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="location" placeholder="location" name="location"
-          value="{{ restaurant.location }}">
+        <input type="text" class="form-control" id="location" placeholder="location" name="location">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="phone" class="col-sm-2 col-form-label">phone</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="phone" placeholder="phone" name="phone"
-          value="{{ restaurant.phone }}">
+        <input type="text" class="form-control" id="phone" placeholder="phone" name="phone">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="google_map" class="col-sm-2 col-form-label">google_map</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="google_map" placeholder="google_map" name="google_map"
-          value="{{ restaurant.google_map }}">
+        <input type="text" class="form-control" id="google_map" placeholder="google_map" name="google_map">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="rating" class="col-sm-2 col-form-label">rating</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" id="rating" placeholder="rating" name="rating" step="0.1"
-          value="{{ restaurant.rating }}">
+        <input type="number" class="form-control" id="rating" placeholder="rating" name="rating" step="0.1">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="description" class="col-sm-2 col-form-label">description</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="description" placeholder="description" name="description"
-          value="{{ restaurant.description }}">
+        <input type="text" class="form-control" id="description" placeholder="description" name="description">
       </div>
     </div>
     <div class="row">
