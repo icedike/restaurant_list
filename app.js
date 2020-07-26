@@ -42,17 +42,7 @@ app.get('/restaurants/new', (req, res) => {
 
 app.post('/restaurants', (req, res) => {
   const newRestaurant = req.body
-  Restaurant.create({
-    name: newRestaurant.name,
-    name_en: newRestaurant.name_en,
-    category: newRestaurant.category,
-    image: newRestaurant.image,
-    location: newRestaurant.location,
-    phone: newRestaurant.phone,
-    google_map: newRestaurant.google_map,
-    rating: newRestaurant.rating,
-    description: newRestaurant.description
-  })
+  Restaurant.create({ newRestaurant })
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
@@ -94,15 +84,7 @@ app.post('/restaurants/:restaurant_id/edit', (req, res) => {
   const newRestaurant = req.body
   Restaurant.findById(id)
     .then(restaurant => {
-      restaurant.name = newRestaurant.name
-      restaurant.name_en = newRestaurant.name_en
-      restaurant.category = newRestaurant.category
-      restaurant.image = newRestaurant.image
-      restaurant.location = newRestaurant.location
-      restaurant.phone = newRestaurant.phone
-      restaurant.google_map = newRestaurant.google_map
-      restaurant.rating = newRestaurant.rating
-      restaurant.description = newRestaurant.description
+      restaurant = Object.assign(restaurant, newRestaurant)
       return restaurant.save()
     })
     .then(() => res.redirect(`/restaurants/${id}`))
