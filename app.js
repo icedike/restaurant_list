@@ -4,6 +4,7 @@ const exhbps = require('express-handlebars')
 const mongoose = require('mongoose')
 const Restaurant = require('./models/restaurant')
 const bodyParser = require('body-parser')
+const restaurant = require('./models/restaurant')
 
 const port = 3000
 
@@ -106,6 +107,15 @@ app.post('/restaurants/:restaurant_id/edit', (req, res) => {
       return restaurant.save()
     })
     .then(() => res.redirect(`/restaurants/${id}`))
+    .catch(error => console.log(error))
+})
+
+// delete restaurant 
+app.get('/restaurants/:restaurant_id/delete', (req, res) => {
+  const id = req.params.restaurant_id
+  Restaurant.findById(id)
+    .then(restaurant => restaurant.remove())
+    .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
 
