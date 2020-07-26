@@ -16,7 +16,6 @@ db.once('open', () => {
   console.log('mongodb connected!')
 })
 
-
 // set template engine
 app.engine('handlebars', exhbps({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
