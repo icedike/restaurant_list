@@ -21,7 +21,6 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
-      <a class="btn btn-primary rounded-circle mb-3 btn-lg" href="/restaurants/new" role="button">+</a>
       <div class="card-columns">
         {{#if restaurants}}
         {{#each restaurants}}
@@ -35,16 +34,22 @@
             <div class="restaurant-category mb-1">
               <i class="fas fa-utensils pr-2"></i> {{this.category}}
             </div>
-
-            <span class="badge badge-pill badge-danger font-weight-normal">
-              {{this.rating}}
-              <i class="fas fa-star fa-xs"></i>
-            </span>
-            <a href="/restaurants/{{this._id}}/edit">編輯</a>
-            <a href="/restaurants/{{this._id}}/delete">刪除</a>
+            <div class="row">
+              <div class="col">
+                <span class="badge badge-pill badge-danger font-weight-normal">
+                  {{this.rating}}
+                  <i class="fas fa-star fa-xs"></i>
+                </span>
+              </div>
+              <div class="col-auto">
+                <a class="btn btn-success" href="/restaurants/{{this._id}}/edit">Edit</a>
+                <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST" style="display:inline">
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-
         {{/each}}
         {{else}}
         <h2>找不到符合的餐廳 </h2>
