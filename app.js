@@ -40,9 +40,10 @@ app.get('/restaurants/new', (req, res) => {
   res.render('new')
 })
 
+// add a restaurant
 app.post('/restaurants', (req, res) => {
   const newRestaurant = req.body
-  Restaurant.create({ newRestaurant })
+  Restaurant.create(newRestaurant)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
