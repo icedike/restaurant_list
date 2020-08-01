@@ -35,6 +35,12 @@ cd restaurant_list
 npm install
 ```
 
+* 創造DB資料
+
+```
+npm run seed
+```
+
 * 開啟程式
 
 ```
