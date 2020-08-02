@@ -25,4 +25,34 @@ router.get('/search', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// sort restaurants
+router.get('/sort', (req, res) => {
+  const sortMethod = req.query.sortMethod
+
+  let sortConfig = {}
+
+  switch (sortMethod) {
+    case 'nameAsc':
+      sortConfig = { name_en: 'asc' }
+      break
+    case 'nameDesc':
+      sortConfig = { name_en: 'desc' }
+      break
+    case 'category':
+      sortConfig = { category: 'desc' }
+      break
+    case 'location':
+      sortConfig = { location: 'desc' }
+      break
+    default:
+      break
+  }
+
+  Restaurant.find()
+    .lean()
+    .sort(sortConfig)
+    .then(restaurants => res.render('index', { restaurants }))
+    .catch(error => console.log(error))
+})
+
 module.exports = router
