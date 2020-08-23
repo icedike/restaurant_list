@@ -23,7 +23,7 @@
 
 ```
 git clone https://github.com/icedike/restaurant_list.git
-````
+```
 
 * 切至專案資料夾
 ```
