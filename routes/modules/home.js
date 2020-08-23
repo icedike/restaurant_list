@@ -5,7 +5,8 @@ const router = express.Router()
 
 // show restaurant list
 router.get('/', (req, res) => {
-  Restaurant.find()
+  const userId = req.user._id
+  Restaurant.find({ userId })
     .lean()
     .then(restaurants => res.render('index', { restaurants }))
     .catch(error => console.log(error))
@@ -14,7 +15,8 @@ router.get('/', (req, res) => {
 // search restaurants by the name
 router.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  Restaurant.find()
+  const userId = req.user._id
+  Restaurant.find({ userId })
     .lean()
     .then(restaurants => {
       const restaurantSearched = restaurants.filter(restaurant => {
@@ -28,7 +30,7 @@ router.get('/search', (req, res) => {
 // sort restaurants
 router.get('/sort', (req, res) => {
   const sortMethod = req.query.sortMethod
-
+  const userId = req.user._id
   let sortConfig = {}
 
   switch (sortMethod) {
@@ -48,7 +50,7 @@ router.get('/sort', (req, res) => {
       break
   }
 
-  Restaurant.find()
+  Restaurant.find({ userId })
     .lean()
     .sort(sortConfig)
     .then(restaurants => res.render('index', { restaurants }))
