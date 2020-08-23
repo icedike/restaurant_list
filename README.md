@@ -10,13 +10,23 @@
 * 點選加號新增餐廳資料
 * 點選刪除來刪除餐廳
 * 點選編輯來編輯餐廳資料
+* 使用者可以用Facebook 或 Email 註冊登入
 
 ## 環境建置與需求
 * Node.js v13.12.0
 * Express v4.17.1
 * Express-Handlebars v5.1.0
-* Body-parser v1.19.0"
+* Body-parser v1.19.0
 * Mongoose v5.9.25
+* bcryptjs v2.4.3
+* body-parser v1.19.0
+* connect-flash v0.1.1
+* dotenv v8.2.0
+* express-session v1.17.1
+* method-override v3.0.0
+* passport v0.4.1
+* passport-facebook v3.0.0
+* passport-local v1.0.0
 
 ## 啟動方式
 * 將專案clone到本地端
